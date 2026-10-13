@@ -1,4 +1,3 @@
-
 import sys
 
 year = int(sys.argv[1])
