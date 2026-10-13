@@ -1,7 +1,13 @@
-from leap import leapYear
 
-def test_year1():
-    assert leapYear(2012) == "Leap year"
+import subprocess
 
-def test_year2():
-    assert leapYear(2021) == "Not a leap year"
+def test():
+    assert "2024 is a Leap Year" in subprocess.check_output(
+        ["python", "leafyear.py", "2024"], text=True
+    )
+    assert "1900 is not a Leap Year" in subprocess.check_output(
+        ["python", "leafyear.py", "1900"], text=True
+    )
+    print("All tests passed!")
+
+test()
