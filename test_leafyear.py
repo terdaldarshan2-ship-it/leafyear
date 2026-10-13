@@ -1,14 +1,11 @@
-
 import subprocess
+import sys
 
-def test():
-    year = input("Enter a year to test: ")
+year = sys.argv[1]
 
-    out = subprocess.check_output(
-        ["python", "leafyear.py", year], text=True
-    )
+result = subprocess.check_output(
+    [sys.executable, "leafyear.py", year], text=True
+)
 
-    print(out)
-    print("Test completed!")
-
-test()
+print(result)
+print("Test completed!")
